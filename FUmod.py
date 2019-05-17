@@ -1,6 +1,18 @@
 # -*- coding: utf-8 -*-
+import os
+import nuke
 
-def list_make(self): #初回実行
+try:
+    from PySide2.QtGui import *
+    from PySide2.QtCore import *
+    from PySide2.QtUiTools import QUiLoader
+    from PySide2.QtWidgets import *
+except:
+    from PySide.QtGui import *
+    from PySide.QtCore import *
+    from PySide.QtUiTools import QUiLoader
+
+def list_make(self):
 
     self.target_nodes = [] #Fileが含まれているノード
     self.node_num = 0#対象のノード数
@@ -18,11 +30,12 @@ def list_make(self): #初回実行
     self.firstlist = []
     self.selectedrow = []
 
-
     a = 0
     self.filenum = 0
 
     self.cancelnum.append(0)
+
+    print 'ここだよ'
 
     for n in nuke.allNodes():
         try:
@@ -90,10 +103,6 @@ def delete_table(self):
     for n in range(self.filenum+1):
         self.UI.srclist.removeRow(self.filenum-n-1)
         self.UI.dstlist.removeRow(self.filenum-n-1)
-
-def refresh_btn_clicked(self):
-    self.delete_table()
-    self.list_make()
 
 def apply_do(self):
     a = 0

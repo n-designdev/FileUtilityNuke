@@ -46,7 +46,7 @@ class FileUtilityNuke(QMainWindow):
         self.firstlist = []
         self.selectedrow = []
 
-        mod.list_make()
+        mod.list_make(self)
 
         self.UI.refresh_btn.clicked.connect(self.refresh_btn_clicked)
         self.UI.apply_btn.clicked.connect(self.apply_btn_clicked)
@@ -59,30 +59,30 @@ class FileUtilityNuke(QMainWindow):
 
         self.UI.show()
 
-def refresh_btn_clicked(self):
-    mod.delete_table()
-    mod.listmake()
+    def refresh_btn_clicked(self):
+        mod.delete_table(self)
+        mod.list_make(self)
 
-def apply_btn_clicked(self):
-    mod.apply_do()
+    def apply_btn_clicked(self):
+        mod.apply_do(self)
 
-def check_btn_clicked(self):
-    mod.cancel_do()
+    def check_btn_clicked(self):
+        mod.cancel_do(self)
 
-def uncheck_btn_clicked(self):
-    mod.uncheck_do()
+    def uncheck_btn_clicked(self):
+        mod.uncheck_do(self)
 
-def allcheck_btn_clicked(self):
-    mod.allcheck_do()
+    def allcheck_btn_clicked(self):
+        mod.allcheck_do(self)
 
-def alluncheck_btn_clicked(self):
-    mod.alluncheck_do()
+    def alluncheck_btn_clicked(self):
+        mod.alluncheck_do(self)
 
-def cancel_btn_clicked(self):
-    mod.cancel_do()
+    def cancel_btn_clicked(self):
+        mod.cancel_do(self)
 
-def reset_btn_clicked(self):
-    mod.reset_do()
+    def reset_btn_clicked(self):
+        mod.reset_do(self)
 
 if __name__ == "__main__":
     main = FileUtilityNuke()
