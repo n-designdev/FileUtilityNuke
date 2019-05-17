@@ -35,8 +35,6 @@ def list_make(self):
 
     self.cancelnum.append(0)
 
-    print 'ここだよ'
-
     for n in nuke.allNodes():
         try:
             g = n['name'].value()
