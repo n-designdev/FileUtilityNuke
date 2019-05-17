@@ -24,7 +24,7 @@ class FileUtilityNuke(QMainWindow):
         
     def set_ui(self):
         
-        self.ui_path = r'C:\Users\k_ueda\Desktop\fu.ui'
+        self.ui_path = r'Y:\users\env\nuke\11.2\FileUtilityNuke\UI\fu.ui'
 
         self.UI = QUiLoader().load(self.ui_path, self)
         self.setWindowTitle("%s" % (self.WINDOW))
